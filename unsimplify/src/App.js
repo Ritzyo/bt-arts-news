@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { View, Text } from 'react-native';
+import NewsComponent from './NewsComponent'; // Import the NewsComponent
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <View style={{ flex: 1 }}>
+      <Text style={{ fontSize: 24, fontWeight: 'bold', textAlign: 'center' }}>
+        My News App
+      </Text>
+      <NewsComponent /> {/* Render the NewsComponent here */}
+    </View>
   );
-}
+};
 
 export default App;
+
+
+
+
+
