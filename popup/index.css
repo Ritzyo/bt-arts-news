@@ -1,0 +1,141 @@
+.frame-1,
+.frame-1 * {
+    box-sizing: border-box;
+}
+.frame-1 {
+    background: #d4e9ec;
+    border-style: solid;
+    border-color: #000000;
+    border-width: 1px;
+    width: 907px;
+    height: 602px;
+    position: sticky;
+    overflow-y: auto;
+}
+.ellipse-5 {
+    background: #a4a4a4;
+    border-radius: 50%;
+    width: 41px;
+    height: 41px;
+    position: absolute;
+    left: 40px;
+    top: 15px;
+}
+.logo {
+    color: #000000;
+    text-align: center;
+    font: 400 italic 8px "Inter-Italic", sans-serif;
+    position: absolute;
+    left: 40px;
+    top: 22px;
+    width: 41px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.summary-article-title-lorem-ipsum-dolor-sit-amet-consectetur-adipis {
+    color: #003138;
+    text-align: left;
+    font: 700 20px "Inter-Bold", sans-serif;
+    position: absolute;
+    left: 101px;
+    top: 22px;
+    width: 705px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.enter-custom-excerpt {
+    color: #003138;
+    text-align: center;
+    font: 400 18px "Inter-Regular", sans-serif;
+    position: absolute;
+    left: 227px;
+    top: 188px;
+    width: 451px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.or {
+    color: #003138;
+    text-align: center;
+    font: 700 16px "Inter-Bold", sans-serif;
+    position: absolute;
+    left: 409px;
+    top: 153px;
+    width: 87px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rectangle-13 {
+    background: #f5f5f5;
+    border-radius: 12px;
+    border-style: solid;
+    border-color: #000000;
+    border-width: 1px;
+    width: 705px;
+    height: 284px;
+    position: absolute;
+    left: 101px;
+    top: 223px;
+}
+.paste-excerpt-here {
+    color: #898989;
+    text-align: left;
+    font: 400 18px "Inter-Regular", sans-serif;
+    position: absolute;
+    left: 113px;
+    top: 231px;
+    width: 451px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.create-summary-button-component-set {
+    background: #008c9b;
+    border-radius: 30px;
+    padding: 7px 33px 7px 33px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 518px;
+    height: 40px;
+    position: absolute;
+    left: 194px;
+    top: 104px;
+    overflow: hidden;
+}
+.create-summary-for-article {
+    color: #ffffff;
+    text-align: center;
+    font: 400 18px "Inter-Regular", sans-serif;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.create-summary-button-component-set2 {
+    background: #008c9b;
+    border-radius: 30px;
+    padding: 7px 33px 7px 33px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 518px;
+    height: 40px;
+    position: absolute;
+    left: 194px;
+    top: 524px;
+    overflow: hidden;
+}
