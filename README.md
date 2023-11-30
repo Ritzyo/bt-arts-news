@@ -1,2 +1,3 @@
 # bt-arts-news
-[REPO NAME TBD]
+
+# This is a chrome extension
