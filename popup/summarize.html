@@ -3,6 +3,7 @@
     <head>
         
         <title>Page 2</title>
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:*;">
         <style>
             .frame-1,
             .frame-1 * {
@@ -25,7 +26,7 @@
                 left: 134px;
                 top: 846px;
             }
-            .lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua-ut-enim-ad-minim-veniam-quis-nostrud-exercitation-ullamco-laboris-nisi-ut-aliquip-ex-ea-commodo-consequat-duis-aute-irure-dolor-in-reprehenderit-in-voluptate-velit-esse-cillum-dolore-eu-fugiat-nulla-pariatur-excepteur-sint-occaecat-cupidatat-non-proident-sunt-in-culpa-qui-officia-deserunt-mollit-anim-id-est-laborum-lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua-ut-enim-ad-minim-veniam-quis-nostrud-exercitation-ullamco-laboris-nisi-ut-aliquip-ex-ea-commodo-consequat-lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua-ut-enim-ad-minim-veniam-quis-nostrud-exercitation-ullamco-laboris-nisi-ut-aliquip-ex-ea-commodo-consequat-duis-aute-irure-dolor-in-reprehenderit-in-voluptate-velit-esse-cillum-dolore-eu-fugiat-nulla-pariatur-excepteur-sint-occaecat-cupidatat-non-proident-sunt-in-culpa-qui-officia-deserunt-mollit-anim-id-est-laborum-lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua-ut-enim-ad-minim-veniam-quis-nostrud-exercitation-ullamco-laboris-nisi-ut-aliquip-ex-ea-commodo-consequat-duis-aute-irure-dolor-in-reprehenderit-in-voluptate-velit-esse-cillum-dolore-eu-fugiat-nulla-pariatur-excepteur-sint-occaecat-cupidatat-non-proident-sunt-in-culpa-qui-officia-deserunt-mollit-anim-id-est-laborum-excepteur-sint-occaecat-cupidatat-non-proident-sunt-in-culpa-qui-officia-deserunt-mollit-anim-id-est-laborum-lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua-ut-enim-ad-minim-veniam-quis-nostrud-exercitation-ullamco-laboris-nisi-ut-aliquip-ex-ea-commodo-consequat-duis-aute-irure-dolor-in-reprehenderit-in-voluptate-velit-esse-cillum-dolore-eu-fugiat-nulla-pariatur-excepteur-sint-occaecat-cupidatat-non-proident-sunt-in-culpa-qui-officia-deserunt-mollit-anim-id-est-laborum-lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua-ut-enim-ad-minim-veniam-quis-nostrud-exercitation-ullamco-laboris-nisi-ut-aliquip-ex-ea-commodo-consequat-duis-aute-irure-dolor-in-reprehenderit-in-voluptate-velit-esse-cillum-dolore-eu-fugiat-nulla-pariatur-excepteur-sint-occaecat-cupidatat-non-proident-sunt-in-culpa-qui-officia-deserunt-mollit-anim-id-est-laborum {
+            .summary{
                 color: #003138;
                 text-align: left;
                 font: 400 18px "Lato-Regular", sans-serif;
@@ -65,7 +66,7 @@
                 font: 400 24px "Lato-Regular", sans-serif;
                 position: absolute;
                 left: 40px;
-                top: 786px;
+                top: 270px;
                 width: 399px;
                 height: 39px;
                 display: flex;
@@ -78,7 +79,7 @@
                 font: 400 24px "Lato-Regular", sans-serif;
                 position: absolute;
                 left: 544px;
-                top: 786px;
+                top: 270px;
                 width: 269px;
                 height: 39px;
                 display: flex;
@@ -91,7 +92,7 @@
                 font: 400 18px "Lato-Regular", sans-serif;
                 position: absolute;
                 left: 671px;
-                top: 846px;
+                top: 310px;
                 width: 219px;
                 height: 39px;
                 display: flex;
@@ -104,7 +105,7 @@
                 font: 400 40px "Lato-Regular", sans-serif;
                 position: absolute;
                 left: 545px;
-                top: 825px;
+                top: 290px;
                 width: 126px;
                 height: 82px;
                 display: flex;
@@ -117,7 +118,7 @@
                 font: 400 24px "Lato-Regular", sans-serif;
                 position: absolute;
                 left: 40px;
-                top: 1083px;
+                top: 350px;
                 width: 364px;
                 height: 39px;
                 display: flex;
@@ -167,7 +168,7 @@
                 height: 40px;
                 position: absolute;
                 left: 358px;
-                top: 713px;
+                top: 200px;
                 overflow: hidden;
             }
             .create-summary-for-article {
@@ -211,10 +212,13 @@
             }
         </style>
         <script src="../src/script.js"></script>
+        <script src="../src/copy.js"></script>
     </head>
     <body>
         <div class="frame-1">
-            <div id="summarys"></div>
+            <div class = "summary">
+                <div id="summarys"></div>
+                </div>
             </div>
             <div class="rectangle-10"></div>
             <div class="rectangle-11"></div>
@@ -243,12 +247,17 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
             </div>
             <div class="copy-summary">
-                <div class="create-summary-for-article">COPY SUMMARY</div>
+                <div class="create-summary-for-article">
+                    <button id="copyButton">
+                        COPY SUMMARY
+                    </button>
             </div>
+        </div>
             <div
                 class="summary-article-title-lorem-ipsum-dolor-sit-amet-consec"
             >
-                Summary: Article Title Lorem ipsum dolor sit amet, consec...
+                 Article: US-China Space Race for Moon Mining Heats Up
+
             </div>
             <div class="rectangle-18"></div>
             <svg

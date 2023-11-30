@@ -6,3 +6,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set the summary text to the element with id "summarys"
     document.getElementById("summarys").innerHTML = summaryText;
 });
+
