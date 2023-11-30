@@ -2,7 +2,7 @@ document.getElementById("secondButton").addEventListener("click", summarizer);
 let data;
 
 async function summarizer() {
-    const url = "https://www.foxnews.com/live-news/hamas-attack-israel-war";
+    const url = "https://www.foxnews.com/politics/us-china-space-race-moon-mining-heats-up";
     const headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
     };
