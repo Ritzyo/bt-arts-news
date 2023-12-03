@@ -3,7 +3,47 @@
     <head>
         
         <title>Page 2</title>
-        <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:*;">
+        <link rel="stylesheet" type="text/css" href="index.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com/css?family=Bangers">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* 'unsafe-inline';">        <style>
+            /* Define CSS styles to control the size of the popup */
+
+            body {
+                font-family: 'Roboto', sans-serif; /* Set the overall font family */
+                width: 700px;
+                height: 550px;
+                background-color: #f0f0f0;
+                padding: 20px;
+                margin: 0px !important;
+                text-align: center;
+            }
+
+            h1, h2, h3, p, button {
+                font-family: 'Roboto', sans-serif; /* Set the font family for headings, paragraphs, and buttons */
+            }
+
+            h1 {
+                font-size: 18px;
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            button {
+                background-color: #008c9b;
+                color: #ffffff;
+                padding: 10px 20px;
+                border: none;
+                cursor: pointer;
+                font-family: 'Roboto', sans-serif; /* Set the font family for buttons */
+            }
+           </style>
+            </head>
+            <head>
         <style>
             .frame-1,
             .frame-1 * {
@@ -14,8 +54,8 @@
                 border-style: solid;
                 border-color: #000000;
                 border-width: 1px;
-                width: 907px;
-                height: 602px;
+                width: 700px;
+                height: 550px;
                 position: sticky;
                 overflow-y: auto;
             }
@@ -29,44 +69,21 @@
             .summary{
                 color: #003138;
                 text-align: left;
-                font: 400 18px "Lato-Regular", sans-serif;
+                font: 400 21px 'Roboto', sans-serif;
                 position: absolute;
-                left: 40px;
-                top: 69px;
-                width: 828px;
-                height: 688px;
-            }
-            .rectangle-10 {
-                background: #d9d9d9;
-                width: 248px;
-                height: 139px;
-                position: absolute;
-                left: 40px;
-                top: 400px;
-            }
-            .rectangle-11 {
-                background: #d9d9d9;
-                width: 248px;
-                height: 139px;
-                position: absolute;
-                left: 330px;
-                top: 400px;
-            }
-            .rectangle-12 {
-                background: #d9d9d9;
-                width: 248px;
-                height: 139px;
-                position: absolute;
-                left: 620px;
-                top: 400px;
+                left: 65px;
+                top: 75px;
+                width: 600px;
+                height: 400px;
+                font-weight: 100;
             }
             .our-algorithm-s-bias-evaluation {
                 color: #003138;
                 text-align: left;
-                font: 400 24px "Lato-Regular", sans-serif;
+                font: 400 18px 'Roboto', sans-serif;
                 position: absolute;
                 left: 40px;
-                top: 270px;
+                top: 350px;
                 width: 399px;
                 height: 39px;
                 display: flex;
@@ -76,10 +93,10 @@
             .lack-of-bias-score {
                 color: #003138;
                 text-align: left;
-                font: 400 24px "Lato-Regular", sans-serif;
+                font: 400 18px 'Roboto', sans-serif;
                 position: absolute;
-                left: 544px;
-                top: 270px;
+                left: 520px;
+                top: 350px;
                 width: 269px;
                 height: 39px;
                 display: flex;
@@ -89,7 +106,7 @@
             .this-article-has-light-to-moderate-bias {
                 color: #003138;
                 text-align: left;
-                font: 400 18px "Lato-Regular", sans-serif;
+                font: 400 18px 'Roboto', sans-serif;
                 position: absolute;
                 left: 50px;
                 top: 320px;
@@ -102,7 +119,7 @@
             ._78 {
                 color: #003138;
                 text-align: left;
-                font: 400 40px "Lato-Regular", sans-serif;
+                font: 400 40px 'Roboto', sans-serif;
                 position: absolute;
                 left: 545px;
                 top: 300px;
@@ -115,7 +132,7 @@
             .related-articles {
                 color: #003138;
                 text-align: left;
-                font: 400 24px "Lato-Regular", sans-serif;
+                font: 400 24px 'Roboto', sans-serif;
                 position: absolute;
                 left: 40px;
                 top: 370px;
@@ -125,30 +142,30 @@
                 align-items: center;
                 justify-content: flex-start;
             }
-            .lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit {
+            .article1 {
                 color: #003138;
                 text-align: left;
-                font: 400 16px "Lato-Regular", sans-serif;
+                font: 400 16px 'Roboto', sans-serif;
                 position: absolute;
                 left: 330px;
                 top: 540px;
                 width: 248px;
                 height: 73px;
             }
-            .lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit2 {
+            .article2 {
                 color: #003138;
                 text-align: left;
-                font: 400 16px "Lato-Regular", sans-serif;
+                font: 400 16px 'Roboto', sans-serif;
                 position: absolute;
                 left: 620px;
                 top: 540px;
                 width: 248px;
                 height: 73px;
             }
-            .lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit3 {
+            .article3 {
                 color: #003138;
                 text-align: left;
-                font: 400 16px "Lato-Regular", sans-serif;
+                font: 400 16px 'Roboto', sans-serif;
                 position: absolute;
                 left: 40px;
                 top: 540px;
@@ -156,6 +173,7 @@
                 height: 73px;
             }
             .copy-summary {
+                
                 background: #008c9b;
                 border-radius: 30px;
                 padding: 7px 33px 7px 33px;
@@ -167,14 +185,14 @@
                 width: 192px;
                 height: 40px;
                 position: absolute;
-                left: 358px;
-                top: 200px;
+                left: 240px;
+                top: 280px;
                 overflow: hidden;
             }
             .create-summary-for-article {
                 color: #ffffff;
                 text-align: center;
-                font: 400 18px "Inter-Regular", sans-serif;
+                font: 400 18px 'Roboto', sans-serif;
                 position: relative;
                 display: flex;
                 align-items: center;
@@ -183,11 +201,11 @@
             .summary-article-title-lorem-ipsum-dolor-sit-amet-consec {
                 color: #003138;
                 text-align: left;
-                font: 700 20px "Lato-Bold", sans-serif;
+                font: 700 22px 'Roboto', sans-serif;
                 position: absolute;
-                left: 124px;
-                top: 22px;
-                width: 589px;
+                left: 80px;
+                top: 50px;
+                width: 645px;
                 height: 26px;
                 display: flex;
                 align-items: center;
@@ -203,51 +221,52 @@
             }
             .arrow-1 {
                 width: 30px;
-                height: 0px;
+                height: 20px;
                 position: absolute;
-                left: 70px;
-                top: 35px;
+                left: 30px;
+                top: 40px;
                 transform: translate(-31.5px, -11.05px);
                 overflow: visible;
             }
+            body {
+                text-align: center; /* Center align the content */
+            }
+            h1 {
+                font-family: 'Roboto', sans-serif; /* Replace 'Your_Custom_Font' with the actual font you want to use */
+                font-size: 100px;
+            }
+            .h1-sub {
+                font-family: 'Roboto', sans-serif; /* Replace 'Your_Custom_Font' with the actual font you want to use */
+                font-size: 15px;
+            }
+            #summarys {
+            font-family: 'Roboto', sans-serif;
+        }
+        #copyButton {
+            font-size: 18px;
+        }
         </style>
         <script src="../src/script.js"></script>
         <script src="../src/copy.js"></script>
+        <script src="../src/goback.js"></script>
     </head>
     <body>
         <div class="frame-1">
+
             <div class = "summary">
                 <div id="summarys"></div>
                 </div>
             </div>
-            <div class="rectangle-10"></div>
-            <div class="rectangle-11"></div>
-            <div class="rectangle-12"></div>
+
             <div class="our-algorithm-s-bias-evaluation">
                 
                 Our algorithms bias evaluation:
             </div>
             <div class="lack-of-bias-score">Lack of bias score:</div>
             <div class="this-article-has-light-to-moderate-bias">
-                This article has light to moderate bias.
             </div>
-            <div class="_78">78%</div>
-            <div class="related-articles">Related Articles</div>
-            <div class="lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </div>
-            <div
-                class="lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit2"
-            >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </div>
-            <div
-                class="lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit3"
-            >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </div>
+            <div class="_78"></div>
             <div class="copy-summary">
-                <div class="create-summary-for-article">
                     <button id="copyButton">
                         COPY SUMMARY
                     </button>
@@ -259,21 +278,21 @@
                  Article: US-China Space Race for Moon Mining Heats Up
 
             </div>
-            <div class="rectangle-18"></div>
-            <svg
-                class="arrow-1"
-                width="32"
-                height="24"
-                viewBox="0 0 32 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <path
-                    d="M0.939339 10.9393C0.353552 11.5251 0.353552 12.4749 0.939339 13.0607L10.4853 22.6066C11.0711 23.1924 12.0208 23.1924 12.6066 22.6066C13.1924 22.0208 13.1924 21.0711 12.6066 20.4853L4.12132 12L12.6066 3.51472C13.1924 2.92893 13.1924 1.97919 12.6066 1.3934C12.0208 0.807611 11.0711 0.807611 10.4853 1.3934L0.939339 10.9393ZM32 10.5L2 10.5V13.5L32 13.5V10.5Z"
-                    fill="black"
-                />
-            </svg>
-        </div>
+            <div class="rectangle-18" id="backButton">
+                <svg
+                    class="arrow-1"
+                    width="32"
+                    height="24"
+                    viewBox="0 0 32 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M0.939339 10.9393C0.353552 11.5251 0.353552 12.4749 0.939339 13.0607L10.4853 22.6066C11.0711 23.1924 12.0208 23.1924 12.6066 22.6066C13.1924 22.0208 13.1924 21.0711 12.6066 20.4853L4.12132 12L12.6066 3.51472C13.1924 2.92893 13.1924 1.97919 12.6066 1.3934C12.0208 0.807611 11.0711 0.807611 10.4853 1.3934L0.939339 10.9393ZM32 10.5L2 10.5V13.5L32 13.5V10.5Z"
+                        fill="black"
+                    />
+                </svg>
+            </div>
         
     </body>
 </html>

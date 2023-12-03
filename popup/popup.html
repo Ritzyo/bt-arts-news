@@ -4,32 +4,43 @@
     <head>
         <title>Clarify</title>
         <link rel="stylesheet" type="text/css" href="index.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com/css?family=Bangers">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
         <style>
             /* Define CSS styles to control the size of the popup */
             body {
-                width: 800px; /* Set the width of the popup */
-                height: 900px; /* Set the height of the popup */
-                background-color: #f0f0f0; /* Set the background color */
-                padding: 20px; /* Add padding to the content */
+                font-family: 'Roboto', sans-serif; /* Set the overall font family */
+                width: 700px;
+                height: 550px;
+                background-color: #f0f0f0;
+                padding: 20px;
                 margin: 0px !important;
+                text-align: center;
+            }
+
+            h1, h2, h3, p, button {
+                font-family: 'Roboto', sans-serif; /* Set the font family for headings, paragraphs, and buttons */
             }
 
             h1 {
-                font-size: 18px; /* Customize the font size of the header */
+                font-size: 18px;
             }
 
             img {
-                max-width: 100%; /* Ensure the image fits within the popup */
-                height: auto; /* Maintain image aspect ratio */
+                max-width: 100%;
+                height: auto;
             }
 
             button {
-                background-color: #0073e6; /* Customize the button's background color */
-                color: #ffffff; /* Customize the button's text color */
-                padding: 10px 20px; /* Add padding to the button */
-                border: none; /* Remove button border */
-                cursor: pointer; /* Change cursor on hover */
+                background-color: #008c9b;
+                color: #ffffff;
+                padding: 10px 20px;
+                border: none;
+                cursor: pointer;
+                font-family: 'Roboto', sans-serif; /* Set the font family for buttons */
             }
+            
         </style>
     </head>
     <head>
@@ -38,47 +49,14 @@
             rel="stylesheet"
         />
         <style>
-            .container {
-                width: 700px;
-                height: 300px;
-                padding: 5px; /* Add padding to provide space between content and container */
-                text-align: center; /* Center align the content */
-                background-color: #285aa4; /* Background color of the container */
-                border-radius: 15px; /* Adjust the border radius to create rounded corners */
-                margin: 0 auto;
-                margin-bottom: 1px; /* Center the container horizontally */
-            }
-            .container-left {
-                width: 250px; /* Adjust the width for the left container */
-                height: 500px;
-                text-align: center;
-                background-color: #93a6c3;
-                border-radius: 15px;
-                display: inline-block;
-                margin-right: 20px;
-                vertical-align: top;
-            }
-
-            .container-right {
-                width: 450px; /* Adjust the width for the right container */
-                height: 500px;
-                text-align: center;
-                background-color: #93a6c3;
-                border-radius: 15px;
-                display: inline-block;
-                vertical-align: top;
-            }
             .frame-1,
-            .frame-1 * {
-                box-sizing: border-box;
-            }
             .frame-1 {
                 background: #d4e9ec;
                 border-style: solid;
                 border-color: #000000;
                 border-width: 1px;
-                width: 907px;
-                height: 602px;
+                width: 695px;
+                height: 550px;
                 position: sticky;
                 overflow-y: auto;
             }
@@ -92,14 +70,13 @@
                 top: 15px;
             }
             .logo {
-                color: #000000;
                 text-align: center;
-                font: 400 italic 8px "Inter-Italic", sans-serif;
+                font: 400 italic 8px 'Roboto', sans-serif;
                 position: absolute;
-                left: 40px;
-                top: 22px;
-                width: 41px;
-                height: 26px;
+                left: 30px;
+                top: 45px;
+                width: 70px;
+                height: 35px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -107,9 +84,9 @@
             .summary-article-title-lorem-ipsum-dolor-sit-amet-consectetur-adipis {
                 color: #003138;
                 text-align: left;
-                font: 700 20px "Inter-Bold", sans-serif;
+                font: 700 20px 'Roboto', sans-serif;
                 position: absolute;
-                left: 101px;
+                left: 150px;
                 top: 22px;
                 width: 705px;
                 height: 26px;
@@ -120,10 +97,10 @@
             .enter-custom-excerpt {
                 color: #003138;
                 text-align: center;
-                font: 400 18px "Inter-Regular", sans-serif;
+                font: 400 18px 'Roboto', sans-serif;
                 position: absolute;
-                left: 227px;
-                top: 188px;
+                left: 110px;
+                top: 115px;
                 width: 451px;
                 height: 26px;
                 display: flex;
@@ -133,7 +110,7 @@
             .or {
                 color: #003138;
                 text-align: center;
-                font: 700 16px "Inter-Bold", sans-serif;
+                font: 700 16px 'Roboto', sans-serif;
                 position: absolute;
                 left: 409px;
                 top: 153px;
@@ -149,16 +126,16 @@
                 border-style: solid;
                 border-color: #000000;
                 border-width: 1px;
-                width: 705px;
-                height: 284px;
+                width: 625px;
+                height: 250px;
                 position: absolute;
-                left: 101px;
-                top: 223px;
+                left: 30px;
+                top: 160px;
             }
             .paste-excerpt-here {
-                width: 77%; /* Make the textarea width 100% of the container */
+                width: 70%; /* Make the textarea width 100% of the container */
                 height: 150px; /* Set the desired height of the textarea */
-                margin-top: 10px; /* Add some margin at the top */
+                margin-top: 0px; /* Add some margin at the top */
                 resize: none; /* Disable textarea resizing */
             }
             .create-summary-button-component-set {
@@ -170,17 +147,17 @@
                 gap: 10px;
                 align-items: center;
                 justify-content: center;
-                width: 518px;
+                width: 450px;
                 height: 40px;
                 position: absolute;
-                left: 194px;
-                top: 104px;
+                left: 150px;
+                top: 40px;
                 overflow: hidden;
             }
             .create-summary-for-article {
                 color: #ffffff;
                 text-align: center;
-                font: 400 18px "Inter-Regular", sans-serif;
+                font: 400 18px 'Roboto', sans-serif;
                 position: relative;
                 display: flex;
                 align-items: center;
@@ -195,17 +172,17 @@
                 gap: 10px;
                 align-items: center;
                 justify-content: center;
-                width: 518px;
+                width: 450px;
                 height: 40px;
                 position: absolute;
-                left: 194px;
-                top: 524px;
+                left: 90px;
+                top: 450px;
                 overflow: hidden;
             }
             .create-summary-for-article-2 {
                 color: #ffffff;
                 text-align: center;
-                font: 400 18px "Inter-Regular", sans-serif;
+                font: 400 18px 'Roboto', sans-serif;
                 position: relative;
                 display: flex;
                 align-items: center;
@@ -223,8 +200,8 @@
                 width: 518px;
                 height: 40px;
                 position: absolute;
-                left: 194px;
-                top: 600px;
+                left: 150px;
+                top: 400px;
                 overflow: hidden; 
             }
 
@@ -232,13 +209,16 @@
                 text-align: center; /* Center align the content */
             }
             h1 {
-                font-family: "Bangers", cursive; /* Replace 'Your_Custom_Font' with the actual font you want to use */
+                font-family: 'Roboto', sans-serif; /* Replace 'Your_Custom_Font' with the actual font you want to use */
                 font-size: 100px;
             }
             .h1-sub {
-                font-family: "Nunito", sans-serif; /* Replace 'Your_Custom_Font' with the actual font you want to use */
+                font-family: 'Roboto', sans-serif; /* Replace 'Your_Custom_Font' with the actual font you want to use */
                 font-size: 15px;
             }
+            #summarys {
+            font-family: 'Roboto', sans-serif;
+        }
         </style>
     </head>
     <!-- <body>
@@ -260,16 +240,13 @@
         /> -->
     <body>
         <div class="frame-1">
-            <div class="ellipse-5"></div>
-            <div class="logo">LOGO</div>
-            <div
-                class="summary-article-title-lorem-ipsum-dolor-sit-amet-consectetur-adipis"
-            >
-                Article: US-China Space Race for Moon Mining Heats Up
+            <div class="logo">
+                <img src="../popup/convergent_logo_-_1_-_cropped_720.png">
             </div>
+            
             <div class="enter-custom-excerpt">ENTER CUSTOM EXCERPT:</div>
             <div class="rectangle-13"></div>
-            <textarea class="paste-excerpt-here" id="summarys" placeholder="Paste excerpt here..."></textarea>
+            <textarea class = rectangle-13 id="summarys" placeholder="Paste excerpt here..."></textarea>
             <div class="create-summary-button-component-set">
                 <button class="create-summary-for-article" id="secondButton">
                     CREATE SUMMARY FOR ARTICLE
