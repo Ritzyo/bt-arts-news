@@ -217,27 +217,11 @@
                 font-size: 15px;
             }
             #summarys {
-            font-family: 'Roboto', sans-serif;
-        }
+                font-family: 'Roboto', sans-serif;
+                font-size: 19px;
+            }
         </style>
     </head>
-    <!-- <body>
-        <div class="container">
-            <h1>Unsimplify</h1>
-        </div>
-        <div class="container-left">
-            <h1 class="h1-sub">Lets UnSimplify theze News</h1>
-        </div>
-
-        <div class="container-right">
-            <h1 class="h1-sub">The UnSimplified Summary</h1>
-            <h2 id="summary">summary</h2>
-        </div>
-
-        <button id="myButton">Click me</button>
-        <script src="../src/Summarizer.js"></script>
-
-        /> -->
     <body>
         <div class="frame-1">
             <div class="logo">
@@ -246,20 +230,22 @@
             
             <div class="enter-custom-excerpt">ENTER CUSTOM EXCERPT:</div>
             <div class="rectangle-13"></div>
-            <textarea class = rectangle-13 id="summarys" placeholder="Paste excerpt here..."></textarea>
+            <textarea class = rectangle-13 id="textBox" placeholder="Paste excerpt here..."></textarea>
             <div class="create-summary-button-component-set">
-                <button class="create-summary-for-article" id="secondButton">
-                    CREATE SUMMARY FOR ARTICLE
-                </button>
-                <!-- <button id="secondButton">Click me</button> -->
-                <script src="../src/summarizeentire.js"></script>
+                <a href="summarize.html">
+                    <button class="create-summary-for-article" id="summarize-article-button"> 
+                        CREATE SUMMARY FOR ARTICLE
+                    </button>           
+                    <!-- <script src="../src/summarize_article.js"></script> -->
+                </a>
             </div>
             <div class="create-summary-button-component-set2">
-                <button class="create-summary-for-article" id="myButton">
-                    CREATE SUMMARY FOR EXCERPT
-                </button>
-                <!-- <button id="myButton">Click me</button> -->
-                <script type="module" src="../src/Summarizer.js"></script>
+                <a href="summarize.html">
+                    <button class="create-summary-for-article" id="summarize-excerpt-button">
+                        CREATE SUMMARY FOR EXCERPT
+                    </button>
+                    <!-- <script src="../src/summarize_excerpt.js"></script> -->
+                </a>
                 </div>
             </div>
         </div>

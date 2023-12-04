@@ -1,32 +1,50 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Add event listener to the button when the DOM is ready
-    document.getElementById("myButton").addEventListener("click", summarize);
-});
+document.getElementById("summarize-excerpt-button").addEventListener("click", summarize_excerpt);
+
+// window.onload = function() {
+//     summarize_excerpt();
+//     console.log("!!! page loaded !!!");
+// };
+
 let data;
 
-async function summarize() {
-    console.log("Button clicked");
+async function summarize_excerpt() {
+    console.log("summarize_excerpt() called");
 
-    const textareaContent = document.getElementById("summarys").value;
-    console.log("Textarea content:", textareaContent);
-    const article = textareaContent.trim();
-    console.log("Article content:", article);
+    const excerpt = document.getElementById("textBox").value.trim();
+    console.log("Excerpt content:", excerpt);
 
     const headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
     };
 
     try {
-        const simulatedResponse = new Response(textareaContent, { headers, status: 200 });
-        data = textareaContent;
+        // code for predicting bias of article using Flask endpoint (app.py)
 
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(data, "text/html");
-        const articleArray = Array.from(doc.querySelectorAll("p")).map(
-            (p) => p.textContent
-        );
+        var flaskEndpoint = 'http://127.0.0.1:5000/predict-bias?article=' + encodeURIComponent(excerpt);
+            
+        fetch(flaskEndpoint)
+        .then(response => response.json())
+        .then(data => {
 
-        const huggingfaceResponse = await query({ "inputs": article });
+            // window.location.href = "summarize.html?demPerc=" + encodeURIComponent(data.dem_percentage) + "&repPerc=" + encodeURIComponent(data.rep_percentage);
+
+            var demPerc = data.dem_percentage;
+            var repPerc = data.rep_percentage;
+    
+            if (demPerc > repPerc) {
+                document.getElementById("prediction").innerHTML = ((demPerc-0.50)*100).toFixed(2) + "% more Democratic";
+            }
+            else {
+                document.getElementById("prediction").innerHTML = ((repPerc-0.50)*100).toFixed(2) + "% more Republican";
+            }
+        })
+        .catch(error => {
+            console.log(error)
+        });
+
+        // end code for bias
+
+        const huggingfaceResponse = await query({ "inputs": excerpt });
         console.log("Huggingface API Response:", huggingfaceResponse);
 
         if (Array.isArray(huggingfaceResponse) && huggingfaceResponse.length > 0) {
@@ -39,14 +57,8 @@ async function summarize() {
             console.log("Summary text:", summaryText);
 
             // Update the following line to set the summary in the 'summary' div
-            const summaryElement = document.getElementById("summarys");
+            // window.location.href += "&summaryText=" + encodeURIComponent(summaryText);
             document.getElementById("summarys").innerHTML = summaryText;
-            window.location.href = "summarize.html?summaryText=" + encodeURIComponent(summaryText);
-
-
-            return summaryText;
-
-            // Redirect to "summarize.html" after setting the summary
         }
     } catch (error) {
         console.error("Error fetching or processing data:", error);
@@ -75,6 +87,3 @@ async function query(data) {
         throw error;
     }
 }
-
-// Export the summarize function directly
-export { summarize };

@@ -1,6 +1,12 @@
-document.getElementById("secondButton").addEventListener("click", summarizer);
+// document.getElementById("summarize-article-button").addEventListener("click", summarize_article);
 
-async function summarizer() {
+window.onload = function() {
+    summarize_article();
+    console.log("!!! page loaded !!!");
+};
+
+async function summarize_article() {
+    console.log("summarize_article() called");
     try {
         let url;
         const tabs = await new Promise((resolve) => {
@@ -19,10 +25,6 @@ async function summarizer() {
 
             const response = await fetch(url, { headers });
 
-            if (!response.ok) {
-                throw new Error(`Network response was not ok: ${response.status}`);
-            }
-
             const data = await response.text();
 
             const parser = new DOMParser();
@@ -34,6 +36,35 @@ async function summarizer() {
             const article = articleArray.join(" ");
             console.log("Article:", article);
 
+            // code for predicting bias of article using Flask endpoint (app.py)
+
+            var flaskEndpoint = 'http://127.0.0.1:5000/predict-bias?article=' + encodeURIComponent(article);
+
+            fetch(flaskEndpoint)
+            .then(response => response.json())
+            .then(data => {
+
+                // window.location.href = "summarize.html?demPerc=" + encodeURIComponent(data.dem_percentage) + "&repPerc=" + encodeURIComponent(data.rep_percentage);
+
+                var demPerc = data.dem_percentage;
+                var repPerc = data.rep_percentage;
+
+                console.log("demPerc:", demPerc);
+                console.log("repPerc:", repPerc);
+        
+                if (demPerc > repPerc) {
+                    document.getElementById("prediction").innerHTML = ((demPerc-0.50)*100).toFixed(2) + "% more Democratic";
+                }
+                else {
+                    document.getElementById("prediction").innerHTML = ((repPerc-0.50)*100).toFixed(2) + "% more Republican";
+                }
+            })
+            .catch(error => {
+                console.log(error)
+            });
+
+            // end code for bias
+
             const huggingfaceResponse = await fetch(
                 "https://api-inference.huggingface.co/models/facebook/bart-large-cnn",
                 {
@@ -41,7 +72,7 @@ async function summarizer() {
                     method: "POST",
                     body: JSON.stringify({
                         inputs: article,
-                        options: { max_length: 10000, min_length: 30, num_beams: 2 },
+                        options: { max_length: 10000, min_length: 1000, num_beams: 5 },
                     }),
                 }
             );
@@ -53,18 +84,14 @@ async function summarizer() {
                 const firstObject = result[0];
                 const summaryText = firstObject.summary_text;
 
-                console.log("Content of first object:", firstObject);
-                console.log("Summary text:", summaryText);
-
-                const summaryElement = document.getElementById("summarys");
-                summaryElement.innerHTML = summaryText;
-                window.location.href = "summarize.html?summaryText=" + encodeURIComponent(summaryText);
+                document.getElementById("summarys").innerHTML = summaryText;
+                // window.location.href += "&summaryText=" + encodeURIComponent(summaryText);
             }
         } else {
-            console.error("No active tabs found");
+            console.log("No active tabs found");
         }
     } catch (error) {
-        console.error("Error fetching or processing data:", error);
+        console.log("Error fetching or processing data:", error);
     }
 }
 

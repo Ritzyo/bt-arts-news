@@ -80,7 +80,7 @@
             .our-algorithm-s-bias-evaluation {
                 color: #003138;
                 text-align: left;
-                font: 400 18px 'Roboto', sans-serif;
+                font: 400 28px 'Roboto', sans-serif;
                 position: absolute;
                 left: 40px;
                 top: 350px;
@@ -92,10 +92,10 @@
             }
             .lack-of-bias-score {
                 color: #003138;
-                text-align: left;
-                font: 400 18px 'Roboto', sans-serif;
+                text-align: center;
+                font: 400 28px 'Roboto', sans-serif;
                 position: absolute;
-                left: 520px;
+                left: 450px;
                 top: 350px;
                 width: 269px;
                 height: 39px;
@@ -119,7 +119,7 @@
             ._78 {
                 color: #003138;
                 text-align: left;
-                font: 400 40px 'Roboto', sans-serif;
+                font: 400 28px 'Roboto', sans-serif;
                 position: absolute;
                 left: 545px;
                 top: 300px;
@@ -246,9 +246,12 @@
             font-size: 18px;
         }
         </style>
-        <script src="../src/script.js"></script>
-        <script src="../src/copy.js"></script>
-        <script src="../src/goback.js"></script>
+        <script src="../src/copy.js" defer></script>
+        <script src="../src/goback.js" defer></script>
+        <script src="../src/summarize_article.js" defer></script>
+        <!-- <script src="../src/summarize_excerpt.js" defer></script> -->
+        <!-- <script src="../src/script.js" defer></script> -->
+        <!-- <script src="../src/get_prediction.js" defer></script> -->
     </head>
     <body>
         <div class="frame-1">
@@ -262,10 +265,9 @@
                 
                 Our algorithms bias evaluation:
             </div>
-            <div class="lack-of-bias-score">Lack of bias score:</div>
+            <div class="lack-of-bias-score" id="prediction">NULL</div>
             <div class="this-article-has-light-to-moderate-bias">
             </div>
-            <div class="_78"></div>
             <div class="copy-summary">
                     <button id="copyButton">
                         COPY SUMMARY
