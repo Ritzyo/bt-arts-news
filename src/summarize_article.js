@@ -33,8 +33,21 @@ async function summarize_article() {
                 (p) => p.textContent
             );
 
-            const article = articleArray.join(" ");
+            excerpt = document.getElementById('copyTextBox').innerHTML;
+            const article = (excerpt.length > 25) ? excerpt : articleArray.join(" ");
             console.log("Article:", article);
+
+            document.getElementById('copyTextBox').innerHTML = document.getElementById('copyTextBox').innerHTML + " ";
+            console.log("copyTextBox:", document.getElementById('copyTextBox').innerHTML);
+            if (document.getElementById('copyTextBox').innerHTML == "  ") {
+                // take the middle 50% of article
+                var articleLength = article.length;
+                var middle = Math.floor(articleLength/2);
+                var quarter = Math.floor(middle/2);
+                var start = quarter;
+                var end = middle + quarter;
+                article = article.substring(start, end);
+            }
 
             // code for predicting bias of article using Flask endpoint (app.py)
 
@@ -53,10 +66,10 @@ async function summarize_article() {
                 console.log("repPerc:", repPerc);
         
                 if (demPerc > repPerc) {
-                    document.getElementById("prediction").innerHTML = ((demPerc-0.50)*100).toFixed(2) + "% more Democratic";
+                    document.getElementById("prediction").innerHTML = ((demPerc-0.50)*200).toFixed(2) + "% towards Democratic";
                 }
                 else {
-                    document.getElementById("prediction").innerHTML = ((repPerc-0.50)*100).toFixed(2) + "% more Republican";
+                    document.getElementById("prediction").innerHTML = ((repPerc-0.50)*200).toFixed(2) + "% towards Republican";
                 }
             })
             .catch(error => {
@@ -72,7 +85,7 @@ async function summarize_article() {
                     method: "POST",
                     body: JSON.stringify({
                         inputs: article,
-                        options: { max_length: 10000, min_length: 1000, num_beams: 5 },
+                        options: { max_length: 10000, min_length: 100, num_beams: 3 },
                     }),
                 }
             );

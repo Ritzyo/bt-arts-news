@@ -83,7 +83,7 @@
                 font: 400 28px 'Roboto', sans-serif;
                 position: absolute;
                 left: 40px;
-                top: 350px;
+                top: 400px;
                 width: 399px;
                 height: 39px;
                 display: flex;
@@ -96,7 +96,7 @@
                 font: 400 28px 'Roboto', sans-serif;
                 position: absolute;
                 left: 450px;
-                top: 350px;
+                top: 400px;
                 width: 269px;
                 height: 39px;
                 display: flex;
@@ -201,11 +201,11 @@
             .summary-article-title-lorem-ipsum-dolor-sit-amet-consec {
                 color: #003138;
                 text-align: left;
-                font: 700 22px 'Roboto', sans-serif;
+                font: 700 28px 'Roboto', sans-serif;
                 position: absolute;
                 left: 80px;
-                top: 50px;
-                width: 645px;
+                top: 60px;
+                width: 620px;
                 height: 26px;
                 display: flex;
                 align-items: center;
@@ -240,10 +240,14 @@
                 font-size: 15px;
             }
             #summarys {
-            font-family: 'Roboto', sans-serif;
-        }
+                font-family: 'Roboto', sans-serif;
+                position: absolute;
+                font-size: 15px;
+                top: 40px;
+            }
         #copyButton {
             font-size: 18px;
+
         }
         </style>
         <script src="../src/copy.js" defer></script>
@@ -252,6 +256,7 @@
         <!-- <script src="../src/summarize_excerpt.js" defer></script> -->
         <!-- <script src="../src/script.js" defer></script> -->
         <!-- <script src="../src/get_prediction.js" defer></script> -->
+        <script src="../src/read_textbox.js" defer></script>
     </head>
     <body>
         <div class="frame-1">
@@ -263,7 +268,7 @@
 
             <div class="our-algorithm-s-bias-evaluation">
                 
-                Our algorithms bias evaluation:
+                Our algorithm's bias evaluation:
             </div>
             <div class="lack-of-bias-score" id="prediction">NULL</div>
             <div class="this-article-has-light-to-moderate-bias">
@@ -277,7 +282,7 @@
             <div
                 class="summary-article-title-lorem-ipsum-dolor-sit-amet-consec"
             >
-                 Article: US-China Space Race for Moon Mining Heats Up
+            Team Biden is clueless about protecting America in an increasingly dangerous world
 
             </div>
             <div class="rectangle-18" id="backButton">
@@ -295,6 +300,6 @@
                     />
                 </svg>
             </div>
-        
+        <div id="copyTextBox"></div>
     </body>
 </html>
