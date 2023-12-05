@@ -33,20 +33,34 @@ async function summarize_article() {
                 (p) => p.textContent
             );
 
-            excerpt = document.getElementById('copyTextBox').innerHTML;
-            const article = (excerpt.length > 25) ? excerpt : articleArray.join(" ");
+            // excerpt = document.getElementById('copyTextBox').innerHTML;
+            // const article = (excerpt.length > 25) ? excerpt : articleArray.join(" ");
+            var article = articleArray.join(" ");
             console.log("Article:", article);
 
-            document.getElementById('copyTextBox').innerHTML = document.getElementById('copyTextBox').innerHTML + " ";
-            console.log("copyTextBox:", document.getElementById('copyTextBox').innerHTML);
-            if (document.getElementById('copyTextBox').innerHTML == "  ") {
-                // take the middle 50% of article
-                var articleLength = article.length;
-                var middle = Math.floor(articleLength/2);
-                var quarter = Math.floor(middle/2);
-                var start = quarter;
-                var end = middle + quarter;
-                article = article.substring(start, end);
+            // document.getElementById('copyTextBox').innerHTML = document.getElementById('copyTextBox').innerHTML + " ";
+            // console.log("copyTextBox:", document.getElementById('copyTextBox').innerHTML);
+
+            // Retrieve the current value of numAccessed from localStorage
+            let numAccessed = localStorage.getItem('numAccessed');
+
+            // Check if numAccessed is null or undefined (first time access)
+            if (numAccessed === null || numAccessed === undefined) {
+                // Set numAccessed to 1 if it's the first time
+                numAccessed = 1;
+                localStorage.setItem('numAccessed', numAccessed);
+            } else {
+                // Otherwise, parse the value and increment it
+                if (numAccessed.length % 2 == 0) {
+                    var articleLength = article.length;
+                    var middle = Math.floor(articleLength/2);
+                    var quarter = Math.floor(middle/2);
+                    var start = quarter;
+                    var end = middle + quarter;
+                    article = article.substring(start, end);
+                }
+                localStorage.setItem('numAccessed', numAccessed + 1);
+                console.log("numAccessed:", numAccessed)
             }
 
             // code for predicting bias of article using Flask endpoint (app.py)
